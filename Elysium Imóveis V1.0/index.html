@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Transparente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="flex">
+                <a href="index.html"><i class="bi bi-buildings"></i></a>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="imoveis_disponiveis.html">Imóveis Disponíveis</a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-contato">
+                    <button class="dropdown-btn">Acesso Locatários</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <video autoplay loop muted class="banner-video">
+            <source src="video_principal.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div> <!-- Adicionando a sobreposição de gradiente -->
+
+        <h1 class="title">Elysium Imóveis</h1>
+        <div>
+            <p class="paragrafo">Seu lar, nossa referência.</p>
+        </div>
+    </section>
+
+    <section id="properties" class="principais-visitas">
+        <h2>Principais Visitas</h2>
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card" id="card1">
+                <img src="royal_1.jpg" alt="Hotel Nacional Rio de Janeiro">
+                <div class="info">
+                    <h3>Hotel Nacional Rio de Janeiro</h3>
+                    <p>Hotel de luxo com localização privilegiada no Rio de Janeiro.</p>
+                    <p><strong>Avaliação:</strong> 4.7 de 5 (120 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Hotel+Nacional,+Rio+de+Janeiro,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal1">Ver mais</button>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="card" id="card2">
+                <img src="royal_1.jpg" alt="Rosewood São Paulo">
+                <div class="info">
+                    <h3>Rosewood São Paulo</h3>
+                    <p>Hotel boutique com design moderno e sofisticado.</p>
+                    <p><strong>Avaliação:</strong> 4.9 de 5 (80 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Rosewood,+São+Paulo,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal2">Ver mais</button>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="card" id="card3">
+                <img src="royal_1.jpg" alt="Royal Boutique Savassi Hotel">
+                <div class="info">
+                    <h3>Royal Boutique Savassi Hotel</h3>
+                    <p>Acomodações luxuosas em Belo Horizonte.</p>
+                    <p><strong>Avaliação:</strong> 4.5 de 5 (100 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Royal+Boutique+Savassi,+Belo+Horizonte,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal3">Ver mais</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img src="royal_1.jpg" alt="Hotel Nacional Rio de Janeiro">
+                <div class="modal-info">
+                    <h2>Hotel Nacional Rio de Janeiro</h2>
+                    <p>Localizado na Avenida Atlântica, Copacabana, oferece uma vista incrível para o mar.</p>
+                    <p><strong>Preço médio:</strong> R$ 900 por noite</p>
+                    <p><strong>Avaliação:</strong> 4.7/5 - Excelente serviço e localização.</p>
+                    <p><strong>Estrutura:</strong> Academia, restaurante, piscina.</p>
+                    <button class="btn-modal">Agendar Visita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img src="royal_1.jpg" alt="Rosewood São Paulo">
+                <div class="modal-info">
+                    <h2>Rosewood São Paulo</h2>
+                    <p>Localizado na Rua dos Três Irmãos, oferece uma experiência única com design sofisticado.</p>
+                    <p><strong>Preço médio:</strong> R$ 1.200 por noite</p>
+                    <p><strong>Avaliação:</strong> 4.9/5 - Atendimento de classe mundial.</p>
+                    <p><strong>Estrutura:</strong> Spa, restaurante Michelin, piscina interna.</p>
+                    <button class="btn-modal">Agendar Visita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <img src="royal_1.jpg" alt="Royal Boutique Savassi Hotel">
+                <div class="modal-info">
+                    <h2>Royal Boutique Savassi Hotel</h2>
+                    <p>Com excelente localização na Savassi, oferece um ambiente luxuoso e confortável.</p>
+                    <p><strong>Preço médio:</strong> R$ 600 por noite</p>
+                    <p><strong>Avaliação:</strong> 4.5/5 - Ótima localização e acomodações confortáveis.</p>
+                    <p><strong>Estrutura:</strong> Business center, restaurante gourmet.</p>
+                    <button class="btn-modal">Agendar Visita</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+<!-- Seção FIIs -->
+<section class="fii-section">
+    <div class="container">
+        <h2 class="fii-title">Invista no Futuro com Fundos Imobiliários (FIIs)</h2>
+        
+        <!-- Gráfico -->
+        <div class="fii-graph">
+            <canvas id="fiiChart"></canvas>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="grafico.js"></script>
+    <script src="menu.js"></script>
+    
+
+</body>
+
+</html>
+
+
+    <script src="menu.js"></script>
+    
+</body>
+
+</html>
