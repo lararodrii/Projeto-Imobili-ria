@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Transparente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="flex">
+                <a href="index.html"><i class="bi bi-buildings"></i></a>
+
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="imoveis_disponiveis.html">Imóveis Disponíveis</a></li>
+                    </ul>
+                </nav>
+
+                <div class="btn-contato">
+                    <button class="dropdown-btn">Acesso Locatários</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <video autoplay loop muted class="banner-video">
+            <source src="video_principal.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div> <!-- Adicionando a sobreposição de gradiente -->
+
+        <h1 class="title">Elysium Imóveis</h1>
+        <div>
+            <p class="paragrafo">Seu lar, nossa referência.</p>
+        </div>
+    </section>
+
+    <section id="properties" class="principais-visitas">
+        <h2>Principais Visitas</h2>
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card" id="card1">
+                <img src="royal_1.jpg" alt="Hotel Nacional Rio de Janeiro">
+                <div class="info">
+                    <h3>Hotel Nacional Rio de Janeiro</h3>
+                    <p>Hotel de luxo com localização privilegiada no Rio de Janeiro.</p>
+                    <p><strong>Avaliação:</strong> 4.7 de 5 (120 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Hotel+Nacional,+Rio+de+Janeiro,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal1">Ver mais</button>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="card" id="card2">
+                <img src="royal_1.jpg" alt="Rosewood São Paulo">
+                <div class="info">
+                    <h3>Rosewood São Paulo</h3>
+                    <p>Hotel boutique com design moderno e sofisticado.</p>
+                    <p><strong>Avaliação:</strong> 4.9 de 5 (80 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Rosewood,+São+Paulo,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal2">Ver mais</button>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="card" id="card3">
+                <img src="royal_1.jpg" alt="Royal Boutique Savassi Hotel">
+                <div class="info">
+                    <h3>Royal Boutique Savassi Hotel</h3>
+                    <p>Acomodações luxuosas em Belo Horizonte.</p>
+                    <p><strong>Avaliação:</strong> 4.5 de 5 (100 avaliações)</p>
+                </div>
+                <div class="card-right">
+                    <iframe src="https://www.google.com/maps?q=Royal+Boutique+Savassi,+Belo+Horizonte,+Brasil&output=embed" allowfullscreen></iframe>
+                </div>
+                <button class="btn-ver-mais" data-target="modal3">Ver mais</button>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+
+
+
+
+<!--Tríade de cards-->
+<section class="services-section">
+    <div class="services-container">
+        <!-- Card 1 -->
+        <div class="service-card">
+            <i class="bi bi-file-arrow-up service-icon"></i>
+            <h3 class="service-title">Imóvel sob encomenda</h3>
+            <p class="service-description">
+                Descreva o imóvel que você procura e nós avisaremos quando encontrarmos.
+            </p>
+            <a href="#" class="service-link">
+                Encomende seu imóvel <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+            <i class="bi bi-currency-dollar service-icon"></i>
+            <h3 class="service-title">Financiamento</h3>
+            <p class="service-description">
+                As melhores ofertas para você financiar seu imóvel.
+            </p>
+            <a href="#" class="service-link">
+                Faça uma simulação <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+            <i class="bi bi-house-door service-icon"></i>
+            <h3 class="service-title">Cadastre seu imóvel</h3>
+            <p class="service-description">
+                Anuncie conosco! Nós encontraremos o melhor negócio para você.
+            </p>
+            <a href="#" class="service-link">
+                Cadastre seu imóvel <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- Seção FIIs -->
+<section class="fii-section">
+    <div class="container">
+        <h2 class="fii-title">Invista no Futuro com Fundos Imobiliários (FIIs)</h2>
+        
+        <!-- Gráfico -->
+        <div class="fii-graph">
+            <canvas id="fiiChart"></canvas>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="grafico.js"></script>
+    <script src="menu.js"></script>
+    
+
+</body>
+
+</html>
+
+
+    <script src="menu.js"></script>
+    
+</body>
+
+</html>
