@@ -9,87 +9,48 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 1.2rem;
+            font-family: 'Poppins'; 
         }
 
         nav ul li a {
             color: black;
         }
 
-        /* Contêiner das Tabelas */
-        .table-container {
-            display: flex;
-            gap: 20px;
-            margin-top: 100px;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            padding-left: 100px;
-        }
+            
+            .main-grid {
+  display: grid;
+  grid-template-columns: 500px 250px 250px;  /* Coluna principal + duas colunas laterais */
+  grid-template-rows: 400px 400px;  /* Duas linhas com 400px de altura */
+  gap: 20px;  /* Espaçamento entre as colunas */
+  margin-top: 100px;
+}
 
-        /* Estilo das tabelas */
-        .table-card {
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+.main {
+  background-color: lightblue;
+  height: 100%;  /* Altura 100% da linha principal */
+}
 
-        /* Estilo da tabela principal */
-        .table-card-main {
-            width: 650px;
-            height: 430px;
-        }
+.side1, .side2 {
+  background-color: lightgreen;
+  height: 100%;  /* Altura igual à da grid principal */
+}
 
-        /* Linha de 3 tabelas abaixo da principal */
-        .table-row {
-            display: flex;
-            gap: 10px;
-            width: 100%;
-            margin-top: 20px;
-        }
+.bottom-grid {
+  display: grid;
+  grid-template-columns: 500px 250px 250px;  /* Mesmas proporções das colunas acima */
+  gap: 20px;
+}
 
-        .table-small {
-            width: 210px;
-            height: 150px;
-        }
+.bottom-item {
+  background-color: lightcoral;
+  height: 100%;  /* Altura igual à da grid superior */
+}
 
-        .table-medium {
-            width: 305px;
-            height: 210px;
-        }
 
-        /* Coluna de tabelas menores à direita da tabela principal */
-        .table-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        /* Modificação para as imagens */
-        .table-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Garante que a imagem ocupe 100% da área */
-        }
-
-        /* Estilo para as novas tabelas */
-        .table-new  {
-            margin-top: 10px;
-            width: 1100px;
-        }
-
-        /* Ajuste para as duas tabelas ficarem em linha reta abaixo */
-        .table-row-new {
-            display: flex;
-            gap: 20px;
-            justify-content: flex-start;
-            width: 1080px;
-            height: 350px;
-            margin-top: 20px;
-            padding-left: 100px;
-        }
     </style>
 </head>
 
@@ -118,79 +79,17 @@
         </div>
     </header>
 
-    <div class="table-container">
-        <!-- Tabela principal -->
-        <div class="table-card table-card-main">
-            <table>
-                <tr>
-                    <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                </tr>
-            </table>
+    <div class="main-grid">
+        <div class="main">Principal</div>
+        <div class="side1">Lado 1</div>
+        <div class="side2">Lado 2</div>
+        <div class="bottom-grid">
+          <div class="bottom-item">Item 1</div>
+          <div class="bottom-item">Item 2</div>
+          <div class="bottom-item">Item 3</div>
+        </div>
+      </div>
 
-            <!-- Linha de 3 tabelas abaixo da principal -->
-            <div class="table-row">
-                <div class="table-card table-small">
-                    <table>
-                        <tr>
-                            <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="table-card table-small">
-                    <table>
-                        <tr>
-                            <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="table-card table-small">
-                    <table>
-                        <tr>
-                            <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <!-- Coluna de tabelas menores à direita da tabela principal -->
-        <div class="table-column">
-            <div class="table-card table-medium">
-                <table>
-                    <tr>
-                        <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="table-card table-medium">
-                <table>
-                    <tr>
-                        <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                    </tr>
-                </table>
-                
-            </div>
-        </div>
-    </div>
-
-    <!-- Duas novas tabelas em linha horizontal abaixo -->
-    <div class="table-row-new">
-        <div class="table-card table-new">
-            <table>
-                <tr>
-                    <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                </tr>
-            </table>
-        </div>
-        <div class="table-card table-new">
-            <table>
-                <tr>
-                    <td><img src="royal_1.jpg" alt="Imagem do Card" class="table-image"></td>
-                </tr>
-            </table>
-            
-        </div>
-    </div>
 </body>
 
 </html>
