@@ -402,14 +402,14 @@ section.principais-visitas {
     flex: 1;
     padding: 20px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
     border-radius: 5px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
 }
 
 .service-icon {
@@ -767,14 +767,14 @@ section.principais-visitas {
 }
 
 
-/*CHAT*/
+/* CHAT */
 #chat-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #007bff;
+    background-color: #000000b2;
     color: white;
     border-radius: 50%;
     display: flex;
@@ -801,7 +801,7 @@ section.principais-visitas {
 }
 
 #chat-header {
-    background-color: #007bff;
+    background-color: #c59f46;
     color: white;
     padding: 10px;
     border-top-left-radius: 10px;
@@ -828,20 +828,43 @@ section.principais-visitas {
     font-size: 14px;
 }
 
-#chat-input {
+#chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-option {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    flex: 1 1 calc(50% - 10px);
+    text-align: center;
+}
+
+.chat-option:hover {
+    background-color: #e1e1e1;
+}
+
+#user-input {
     display: flex;
     border-top: 1px solid #ddd;
 }
 
-#chat-input input {
+#user-input input {
     flex: 1;
     padding: 10px;
     border: none;
     border-bottom-left-radius: 10px;
 }
 
-#chat-input button {
-    background-color: #007bff;
+#user-input button {
+    background-color: #c59f46;
     color: white;
     border: none;
     padding: 10px;
@@ -849,10 +872,10 @@ section.principais-visitas {
     cursor: pointer;
 }
 
-#chat-input input:focus {
+#user-input input:focus {
     outline: none;
 }
 
-#chat-input button:hover {
-    background-color: #0056b3;
+#user-input button:hover {
+    background-color: #866b2a;
 }

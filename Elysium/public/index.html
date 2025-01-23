@@ -336,30 +336,7 @@
 
 
 
-<!-- Ícone do Chat -->
-<div id="chat-icon">
-    <i class="bi bi-chat-dots-fill"></i>
-</div>
 
-<!-- Caixa do Chat -->
-<div id="chat-box">
-    <div id="chat-header">
-        <h4>Atendimento</h4>
-        <span class="close-btn">&times;</span>
-    </div>
-    <div id="chat-messages">
-        <p><strong>Bot:</strong> Olá! Como posso ajudá-lo?</p>
-    </div>
-    
-     <!-- Div para o chat interface -->
-     <div id="chat-container">
-        <div id="chat-messages"></div>
-
-        <div id="user-input">
-            <input type="text" id="user-message" placeholder="Digite sua mensagem...">
-            <button id="send-message">Enviar</button>
-        </div>
-    </div>
 
     
 
@@ -400,21 +377,92 @@
         </div>
     </footer>
 
-    <script>
-        const chatIcon = document.getElementById('chat-icon');
-        const chatBox = document.getElementById('chat-box');
-        const closeBtn = document.querySelector('.close-btn');
+<!-- Ícone do Chat -->
+<div id="chat-icon">
+    <i class="bi bi-chat-dots-fill"></i>
+</div>
 
-        chatIcon.addEventListener('click', () => {
-            chatBox.style.display = 'flex';
-            chatIcon.style.display = 'none';
-        });
+<!-- Caixa do Chat -->
+<div id="chat-box">
+    <div id="chat-header">
+        <h4>Atendimento</h4>
+        <span class="close-btn">&times;</span>
+    </div>
+    <div id="chat-messages">
+        <p><strong>Bot:</strong> Olá! Como posso ajudá-lo?</p>
+    </div>
+    <div id="chat-options">
+        <button class="chat-option">Imóveis disponíveis</button>
+        <button class="chat-option">Financiamento</button>
+        <button class="chat-option">Contato</button>
+        <button class="chat-option">Horário de funcionamento</button>
+    </div>
+    <div id="user-input">
+        <input type="text" id="user-message" placeholder="Digite sua mensagem...">
+        <button id="send-message">Enviar</button>
+    </div>
+</div>
 
-        closeBtn.addEventListener('click', () => {
-            chatBox.style.display = 'none';
-            chatIcon.style.display = 'flex';
+<script>
+    const chatIcon = document.getElementById('chat-icon');
+    const chatBox = document.getElementById('chat-box');
+    const closeBtn = document.querySelector('.close-btn');
+    const chatMessages = document.getElementById('chat-messages');
+    const userMessage = document.getElementById('user-message');
+    const sendMessage = document.getElementById('send-message');
+    const chatOptions = document.querySelectorAll('.chat-option');
+
+    const responses = {
+        "imóveis disponíveis": "Temos vários imóveis disponíveis. Você pode conferir a lista completa na nossa página de Imóveis Disponíveis.",
+        "financiamento": "Oferecemos diversas opções de financiamento. Entre em contato para mais detalhes.",
+        "contato": "Você pode nos contatar pelo telefone (11) 1234-5678 ou pelo email contato@elysiumimoveis.com.br.",
+        "horário de funcionamento": "Nosso horário de funcionamento é de Segunda a Sexta: 9h às 18h, Sábado: 9h às 14h, Domingo: Fechado."
+    };
+
+    chatIcon.addEventListener('click', () => {
+        chatBox.style.display = 'flex';
+        chatIcon.style.display = 'none';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        chatBox.style.display = 'none';
+        chatIcon.style.display = 'flex';
+    });
+
+    sendMessage.addEventListener('click', () => {
+        const message = userMessage.value.toLowerCase();
+        if (message.trim() !== '') {
+            chatMessages.innerHTML += `<p><strong>Você:</strong> ${userMessage.value}</p>`;
+            userMessage.value = '';
+            let response = "Desculpe, não entendi sua pergunta.";
+            for (const key in responses) {
+                if (message.includes(key)) {
+                    response = responses[key];
+                    break;
+                }
+            }
+            chatMessages.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+    });
+
+    userMessage.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendMessage.click();
+        }
+    });
+
+    chatOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const message = option.textContent.toLowerCase();
+            chatMessages.innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+            let response = responses[message];
+            chatMessages.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         });
-    </script>
+    });
+</script>
+
 
 
 
