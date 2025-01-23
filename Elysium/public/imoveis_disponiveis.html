@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Transparente</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        nav ul li a {
+            color: #000;
+        }
+        .principais-visitas {
+            margin-top: 100px;
+        }
+
+        /* Container do filtro */
+        .filter-container {
+            background-color: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 100px auto 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        /* Título do filtro */
+        .filter-container h2 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Estilo do formulário */
+        .filter-form {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: nowrap;
+            gap: 15px;
+        }
+
+        /* Itens de filtro */
+        .filter-item {
+            display: flex;
+            flex-direction: column;
+            width: 22%;
+            min-width: 150px;
+        }
+
+        /* Labels do filtro */
+        .filter-item label {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Campos de seleção e input */
+        .filter-item select,
+        .filter-item input {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        /* Estilo do botão de filtro */
+        .filter-form button {
+            background-color: #c59f46;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        /* Hover do botão de filtro */
+        .filter-form button:hover {
+            background-color: #b08b3e;
+        }
+
+        /* Estilo do ícone dentro do botão */
+        .filter-form button i {
+            font-size: 1.2em;
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media screen and (max-width: 768px) {
+            .filter-container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            .filter-item {
+                width: 48%;
+            }
+
+            .filter-form button {
+                width: auto;
+            }
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="flex">
+                <!-- Logo -->
+                <a href="index.html"><i class="bi bi-buildings"></i></a>
+
+                <!-- Navegação -->
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="imoveis_disponiveis.html">Imóveis Disponíveis</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Botão de Acesso Locatários -->
+                <div class="btn-contato">
+                    <button class="dropdown-btn">Acesso Locatários</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="filter-container">
+        <h2>Filtrar Imóveis</h2>
+        <form action="#" method="get" class="filter-form">
+            <div class="filter-item">
+                <label for="deal-type">Tipo de Negócio</label>
+                <select id="deal-type" name="deal-type">
+                    <option value="all">Todos</option>
+                    <option value="buy">Comprar</option>
+                    <option value="rent">Alugar</option>
+                </select>
+            </div>
+
+            <div class="filter-item">
+                <label for="location">Localização</label>
+                <input type="text" id="location" name="location" placeholder="Cidade ou Bairro">
+            </div>
+            
+            <div class="filter-item">
+                <label for="price-min">Preço</label>
+                <input type="number" id="price-min" name="price-min" placeholder="Mínimo">
+                <input type="number" id="price-max" name="price-max" placeholder="Máximo">
+            </div>
+            <div class="filter-item">
+                <label for="property-type">Tipo de Imóvel</label>
+                <select id="property-type" name="property-type">
+                    <option value="all">Todos</option>
+                    <option value="house">Casa</option>
+                    <option value="coverage">Cobertura</option>
+                    <option value="apartment">Apartamento</option>
+                    <option value="building">Prédio</option>
+                    <option value="chacara">Chácara</option>
+                </select>
+            </div>
+            
+            <button type="submit">
+                <i class="bi bi-search"></i> Filtrar
+            </button>
+        </form>
+    </div>
+
+    <section id="properties" class="principais-visitas">
+        <h2>Resultado:</h2>
+        <div class="cards">
+            <div class="card" id="card1" data-deal="buy" data-location="Rio de Janeiro" data-price="500000" data-property-type="house">
+                <img src="royal_1.jpg" alt="Hotel Nacional Rio de Janeiro">
+                <div class="info">
+                    <h3 class="place-title">Hotel Nacional Rio de Janeiro</h3>
+                    <p>Hotel de luxo com localização privilegiada no Rio de Janeiro...</p>
+                    <p class="rating">
+                        <strong>Avaliação:</strong> 4.7
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <a href="#avaliacoes1" style="color: #c59f46; text-decoration: none;">(120 avaliações)</a>
+                    </p>
+                    <p><strong>Facilidades:</strong> Piscina, restaurante gourmet, centro de convenções...</p>
+                    <a href="hotel_nacional_rj.html" class="btn-ver-mais">Ver mais</a>
+                </div>
+            </div>
+
+            <div class="card" id="card2" data-deal="rent" data-location="São Paulo" data-price="3000" data-property-type="apartment">
+                <img src="royal_1.jpg" alt="Rosewood São Paulo">
+                <div class="info">
+                    <h3 class="place-title">Rosewood São Paulo</h3>
+                    <p>Hotel boutique com design moderno e sofisticado...</p>
+                    <p class="rating">
+                        <strong>Avaliação:</strong> 4.9
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </p>
+                    <p><strong>Facilidades:</strong> Spa, bar exclusivo...</p>
+                    <button class="btn-ver-mais" data-target="modal2">Ver mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda a Sexta: 9h às 18h</p>
+                <p>Sábado: 9h às 14h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="bi bi-telephone-fill"></i> Telefone: (11) 1234-5678</p>
+                <p><i class="bi bi-envelope-fill"></i> Email: contato@elysiumimoveis.com.br</p>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="footer-socials">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Elysium Imóveis. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterForm = document.querySelector('.filter-form');
+            const cards = document.querySelectorAll('.card');
+
+            filterForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const dealType = document.getElementById('deal-type').value;
+                const location = document.getElementById('location').value.toLowerCase();
+                const priceMin = parseFloat(document.getElementById('price-min').value) || 0;
+                const priceMax = parseFloat(document.getElementById('price-max').value) || Infinity;
+                const propertyType = document.getElementById('property-type').value;
+
+                cards.forEach(card => {
+                    const cardDealType = card.getAttribute('data-deal');
+                    const cardLocation = card.getAttribute('data-location').toLowerCase();
+                    const cardPrice = parseFloat(card.getAttribute('data-price'));
+                    const cardPropertyType = card.getAttribute('data-property-type');
+
+                    const matchesDealType = (dealType === 'all' || cardDealType === dealType);
+                    const matchesLocation = (location === '' || cardLocation.includes(location));
+                    const matchesPrice = (cardPrice >= priceMin && cardPrice <= priceMax);
+                    const matchesPropertyType = (propertyType === 'all' || cardPropertyType === propertyType);
+
+                    if (matchesDealType && matchesLocation && matchesPrice && matchesPropertyType) {
+                        card.style.visibility = 'visible';
+                    } else {
+                        card.style.visibility = 'hidden';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script src="menu.js"></script>
+
+</body>
+
+</html>
