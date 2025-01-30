@@ -928,3 +928,15 @@ section.principais-visitas {
 #user-input button:hover {
     background-color: #866b2a;
 }
+
+/*Botão Voltar*/
+.button-logins {
+    padding: 5px 22px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #c59f46;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
